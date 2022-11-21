@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeliculaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/hola', function () {
+    return 'Hola mundito cruel!!!';
+});
+Route::get('/holis', function () {
+    return view('peliculas.hola');
+});
+Route::resource('pelicula', PeliculaController::class); //====> Conjunto de rutas CRUD
+// Route::get('pelicula', [PeliculaController::class,'index'])->name('pelicula.index'); ====> Creación de rutas manualmente
